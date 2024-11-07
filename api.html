@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="adiv"></div>
+    
+
+</body>
+<style>
+#card{
+
+  background-color: #AB886D;
+  border: 2px  #D6C0B3 solid;
+  
+}
+
+h4{
+  
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h5{
+  
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+  font-size: medium;
+}
+.adiv{
+  background-color:#FFCF9D;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #FFB26F;
+  text-align: center;
+  gap: 50px;
+}
+</style>
+<script>
+    let shop=[
+    {
+            "id": 1,
+            "Title": "The Lion King",
+            "Year": "2019",
+            "Runtime": "118 min",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SX300.jpg"
+          },
+          {
+            "id": 2,
+            "Title": "Mowgli: Legend of the Jungle",
+            "Year": "2018",
+            "Runtime": "104 min",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMjMzODc2NzU5MV5BMl5BanBnXkFtZTgwNTMwMTE3NjM@._V1_SX300.jpg"
+          },
+          {
+            "id": 3,
+            "Title": "Doctor Strange",
+            "Year": "2016",
+            "Runtime": "115 min",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg"
+          },
+    ]
+
+    let container=document.querySelector(".adiv")
+    shop.forEach(x=>{
+        container.innerHTML +=`<div id="card"> <img src="${x.Poster}" id="img" width="320px" height="350p">
+            <h5>${x.Title}</h5><h4>${x.Year}</h4> <h4> ${x.Runtime}</h4> 
+            <a href="./movie.html">click me</a>
+            <br> <br> </div>`
+            
+    }) 
+    function click(){
+      window.location.href="movie.html";
+      
+    }
+    
+    
+</script>
+</html>

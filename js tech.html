@@ -1,0 +1,83 @@
+<!-- // a img changing to another img as like the background-color also changes from black to white using if//
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3gLZapzYIlsgE8DjYs7wxggtQeGSKXtVd4w&s" 
+alt="" id="images" onclick="imgfun(); imgfuns()" height="150px" width="140px" style="padding-left: 50px; padding-top: 25px;">
+
+function imgfuns() {
+    const current=document.body.style.backgroundColor;
+    if(current=='black'){
+        document.body.style.backgroundColor="white";
+    }else{
+        document.body.style.backgroundColor="black";
+    } 
+      
+    }
+    function imgfun(){
+        const image=document.getElementById("images")
+        if (image.src.includes("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3gLZapzYIlsgE8DjYs7wxggtQeGSKXtVd4w&s")) {
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3rq_3qorKSq0tAkgdkUBOZtP5VX0Kj2AWJg&s";
+        } else {
+            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3gLZapzYIlsgE8DjYs7wxggtQeGSKXtVd4w&s";
+        }
+    }
+//-------------------------------------
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Change Background Colors</title>
+   <style>
+     /* Style for the boxes with backgrounds that will change */
+     .color-box {
+       width: 100px;
+       height: 100px;
+       display: inline-block;
+       margin: 10px;
+       transition: background-color 0.3s;
+     }
+     /* Style for the image */
+     .clickable-image {
+       cursor: pointer;
+       margin-top: 20px;
+     }
+   </style>
+ </head>
+ <body>
+ 
+   <!-- Div elements that will have their background colors changed -->
+   <div class="color-box" id="box1"></div>
+   <div class="color-box" id="box2"></div>
+   <div class="color-box" id="box3"></div>
+   <div class="color-box" id="box4"></div>
+ 
+   <!-- Image element that triggers the color change on click -->
+   <img src="https://via.placeholder.com/150" alt="Click me!" class="clickable-image" onclick="changeBackgroundColors()">
+ 
+   <script>
+     // Function to generate a random color
+     function getRandomColor() {
+       const letters = '0123456789ABCDEF';
+       let color = '#';
+       for (let i = 0; i < 6; i++) {
+         color += letters[Math.floor(Math.random() * 16)];
+       }
+       return color;
+     }
+ 
+     // Function to change the background colors of all boxes
+     function changeBackgroundColors() {
+       // Get all elements with the class 'color-box'
+       const boxes = document.querySelectorAll('.color-box');
+       
+       // Loop through each box and assign a random color to its background
+       boxes.forEach(box => {
+         box.style.backgroundColor = getRandomColor();
+       });
+     }
+   </script>
+ </body>
+ </html>
+ 
+ 
